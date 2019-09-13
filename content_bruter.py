@@ -4,7 +4,7 @@ import threading
 
 threads = 50
 target_url = "http://testphp.vulnweb.com"
-wordlist_file = "C:\\tmp\\all.txt"
+wordlist_file = "C:\\tmp\\all.txt" #需自行调整字典路径
 resume = None
 user_agent = "Mozilla/5.0 (X11:Linux x86_64; rv:19.0) Gecko/20100101 Firefox/19.0"
 
@@ -27,6 +27,7 @@ def build_wordlist(wordlist_file):
         else:
             words.put(word)
     return words
+##实际执行过程中出现中断才需使用
 
 def dir_bruter(word_queue,extension=None):
     while not word_queue.empty():
